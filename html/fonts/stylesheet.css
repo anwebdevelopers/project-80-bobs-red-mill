@@ -1,0 +1,184 @@
+@font-face {
+    font-family: 'Coco Gothic';
+    src: url('CocoGothic-Fat.woff2') format('woff2'),
+        url('CocoGothic-Fat.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('OpenSans-BoldItalic.woff2') format('woff2'),
+        url('OpenSans-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('OpenSans-ExtraBoldItalic.woff2') format('woff2'),
+        url('OpenSans-ExtraBoldItalic.woff') format('woff');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Coco Gothic';
+    src: url('CocoGothic-BoldItalic.woff2') format('woff2'),
+        url('CocoGothic-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('OpenSans-LightItalic.woff2') format('woff2'),
+        url('OpenSans-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('OpenSans-Italic.woff2') format('woff2'),
+        url('OpenSans-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Coco Gothic';
+    src: url('CocoGothic-Italic.woff2') format('woff2'),
+        url('CocoGothic-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Coco Gothic';
+    src: url('CocoGothic-UltraLight.woff2') format('woff2'),
+        url('CocoGothic-UltraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Coco Gothic';
+    src: url('CocoGothic-UltraLightItalic.woff2') format('woff2'),
+        url('CocoGothic-UltraLightItalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Coco Gothic';
+    src: url('CocoGothic-Heavy.woff2') format('woff2'),
+        url('CocoGothic-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Coco Gothic';
+    src: url('CocoGothic-Light.woff2') format('woff2'),
+        url('CocoGothic-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('OpenSans-Bold.woff2') format('woff2'),
+        url('OpenSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('OpenSans-SemiBold.woff2') format('woff2'),
+        url('OpenSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Coco Gothic';
+    src: url('CocoGothic.woff2') format('woff2'),
+        url('CocoGothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Coco Gothic';
+    src: url('CocoGothic-HeavyItalic.woff2') format('woff2'),
+        url('CocoGothic-HeavyItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url('Pacifico-Regular.woff2') format('woff2'),
+        url('Pacifico-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Coco Gothic';
+    src: url('CocoGothic-FatItalic.woff2') format('woff2'),
+        url('CocoGothic-FatItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Coco Gothic';
+    src: url('CocoGothic-LightItalic.woff2') format('woff2'),
+        url('CocoGothic-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('OpenSans-Regular.woff2') format('woff2'),
+        url('OpenSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('OpenSans-Light.woff2') format('woff2'),
+        url('OpenSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Coco Gothic';
+    src: url('CocoGothic-Bold.woff2') format('woff2'),
+        url('CocoGothic-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('OpenSans-SemiBoldItalic.woff2') format('woff2'),
+        url('OpenSans-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('OpenSans-ExtraBold.woff2') format('woff2'),
+        url('OpenSans-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+

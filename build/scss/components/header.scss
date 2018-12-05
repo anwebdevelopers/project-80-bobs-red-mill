@@ -1,0 +1,145 @@
+.header {
+    padding: 1px 0;
+    background-color: #fff;
+    box-shadow: 0px 2px 22px rgba(30, 18, 52, 0.15);
+}
+.header__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__logo {
+    flex: 0 0 auto;
+    margin: 1.5rem 2rem 1.5rem 0;
+    img {
+        display: inline-block;
+        vertical-align: top;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+}
+.header__controls {
+    flex: 1 1 auto;
+    order: 1;
+
+
+    display: flex;
+}
+.header__search {
+    flex: 1 0 auto;
+    margin: 1.5rem 2rem;
+
+    display: flex;
+}
+.header__search-submit {
+    @include btn;
+    flex: 0 0 auto;
+    order: -1;
+    &:hover, &:active {
+        svg {
+            color: $color-accent;
+        }
+    }
+    svg {
+        width: 1.8rem;
+        height: 1.8rem;
+        color: #000;
+        transition: .3s;
+    }
+}
+.header__search-input {
+    @include input;
+    flex: 1 1 auto;
+    min-width: 13rem;
+    width: 0;
+    margin-left: 1.5rem;
+    padding: .5rem 0;
+    font-size: 1.4rem;
+}
+.header__buttton-account {
+    @include btn;
+    flex: 0 0 auto;
+    margin: 1.5rem 2rem;
+    &:hover, &:active {
+        svg {
+            color: $color-accent;
+        }
+    }
+    svg {
+        width: 1.6rem;
+        height: 1.8rem;
+        color: #000;
+        transition: .3s;
+    }
+}
+
+.header__buttton-cart {
+    @include btn;
+    flex: 0 0 auto;
+    margin: 1.5rem 0 1.5rem 2rem;
+
+    display: flex;
+    &:hover, &:active {
+        svg {
+            color: $color-accent;
+        }
+    }
+    svg {
+        flex: 0 0 auto;
+        width: 2.2rem;
+        height: 2.2rem;
+        color: #000;
+        transition: .3s;
+    }
+    span {
+        flex: 0 0 auto;
+        min-width: 2.4rem;
+        margin-left: 1rem;
+        padding: .4rem;
+        border-radius: .4rem;
+        font-size: 1.4rem;
+
+        color: #fff;
+        text-align: center;
+        background-color: $color-accent;
+    }
+}
+.header__buttton-menu {
+    display: none;
+}
+.header__menu {
+    flex: 1 0 auto;
+    margin: 1.5rem 2rem;
+    font-size: 1.8rem;
+    color: #2D2E30;
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        display: flex;
+        justify-content: space-between;
+        li {
+            margin: 0 1rem;
+            // &:first-child {
+            //     margin-left: 0;
+            // }
+            // &:last-child {
+            //     margin-right: 0;
+            // }
+            a {
+                text-decoration: none;
+                color: inherit;
+                transition: .3s;
+                &:hover, &:active {
+                    color: $color-accent;
+                }
+                &.active {
+                    color: $color-accent;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}

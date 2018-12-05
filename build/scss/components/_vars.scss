@@ -1,0 +1,148 @@
+$color-main: #C9AA7C;
+$color-accent: #DC281D;
+$font-head: 'Coco Gothic';
+$font-accent: 'Pacifico';
+
+@mixin btn {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    font-family: inherit;
+    background: none;
+    cursor: pointer;
+}
+
+@mixin input {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background: none;
+    border-radius: 0;
+    font-family: inherit;
+}
+// @mixin pseudo($display: block, $pos: absolute, $content: ''){
+//   content: $content;
+//   display: $display;
+//   position: $pos;
+// }
+
+// -webkit-appearance: none;
+// -moz-appearance: none;
+// -ms-appearance: none;
+// -o-appearance: none;
+// appearance: none!important;
+
+// &::-ms-expand {
+//     display: none;
+// }
+
+// &.owl-carousel {
+//     width: 100%;
+//     display: flex !important;
+//     .owl-stage-outer {
+//         flex: 0 0 auto;
+//         width: 100%;
+//         display: flex;
+//         .owl-stage {
+//             flex: 0 0 auto;
+//             display: flex;
+//             .owl-item {
+//                 flex: 0 0 auto;
+//                 display: flex;
+//             }
+//         }
+//     }
+// }
+
+// __menu {
+//     flex: 0 0 auto;
+//     >ul {
+//         margin: 0;
+//         padding: 0;
+//         list-style: none;
+
+//         // font-size: 1.2rem;
+//         // line-height: 1;
+//         // font-weight: 700;
+//         // text-transform: uppercase;
+
+//         display: flex;
+//         a {
+//             display: block;
+//             text-decoration: none;
+//             transition: all .5s ease;
+//         }
+//         > li {
+//             position: relative;
+//             &:hover, &:active, &.active {
+//                 > a {
+//                     color: $light;
+//                 }
+//                 >ul {
+//                     visibility: visible;
+//                     transform: translateY(0);
+//                     opacity: 1;
+//                     z-index: 1;
+//                 }
+//             }
+//             > a {
+//                 // padding: 3rem 1.5rem;
+//                 // color: $medium;
+//                 white-space: nowrap;
+//                 &:hover, &:active {
+//                     color: $light;
+//                 }
+//             }
+//             > ul {
+//                 margin: 0;
+//                 padding: 0;
+//                 list-style: none;
+//                 visibility: hidden;
+//                 transform: translateY(3rem);
+//                 opacity: 0;
+//                 position: absolute;
+//                 left: 0;
+//                 min-width: 100%;
+//                 transition: all .3s ease;
+//                 // background-color: $light;
+//                 li {
+//                     position: relative;
+//                     ul {
+//                         position: absolute;
+//                         top: 0;
+//                         right: 0;
+//                         transform: translateY(3rem) translateX(100%);
+//                         margin: 0;
+//                         padding: 0;
+//                         list-style: none;
+//                         // background-color: $medium;
+//                         visibility: hidden;
+//                         opacity: 0;
+//                         transition: all .3s ease;
+//                     }
+//                     &:hover, &:active, &.active {
+//                         >ul {
+//                             transform: translateY(0) translateX(100%);
+//                             visibility: visible;
+//                             opacity: 1;
+//                             z-index: 1;
+//                         }
+//                     }
+//                 }
+//                 a {
+//                     // padding: 1rem 1.5rem;
+//                     // color: #fff;
+//                     &:hover, &:active {
+//                         background-color: transparentize(#000, .9);
+//                     }
+//                 }
+
+//             }
+//         }
+//     }
+// }
