@@ -1,0 +1,80 @@
+.catalog {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.catalog__item {
+    text-decoration: none;
+    color: #fff;
+    flex: 0 0 auto;
+    width: 25%;
+    min-height: 48rem;
+    padding: 8rem 2.5%;
+    font-size: 3.6rem;
+    text-transform: uppercase;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    z-index: 1;
+    &:before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0, .3);
+        transition: .3s;
+    }
+    &:active,
+    &:hover {
+        &:before {
+            box-shadow: inset 0 0 15rem 0 rgba(0,0,0, .6);
+        }
+    }
+}
+@media only screen and (max-width : 1280px) {
+
+}
+
+@media only screen and (max-width : 992px) {
+    .catalog__item {
+        width: 50%;
+        min-height: 40rem;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+
+}
+
+@media only screen and (max-width : 640px) {
+
+}
+
+@media only screen and (max-width : 480px) {
+    .catalog {
+        display: block;
+    }
+    .catalog__item {
+        width: auto;
+        min-height: 30rem;
+    }
+}
+
+@media only screen and (max-width : 360px) {
+
+}

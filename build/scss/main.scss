@@ -75,7 +75,13 @@ body {
 a {
 	outline: none !important;
 }
-
+.title {
+	margin: 0;
+	font-size: 4.8rem;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: #2D2E30;
+}
 // .text {
 // 	* {
 // 		max-width: 100% !important;
@@ -153,6 +159,9 @@ a {
 // }
 //Custom Styles Here
 @import "components/header.scss";
+@import "components/banner.scss";
+@import "components/catalog.scss";
+@import "components/new.scss";
 
 //@import "build/scss/components/magnific-popup.scss";
 
@@ -161,7 +170,7 @@ a {
 
 //Load Libs SASS
 // @import "html/libs/animate/animate.sass";
-//@import "html/libs/OwlCarousel2-2.2.1/dist/assets/owl.carousel.min";
+@import "html/libs/OwlCarousel2-2.2.1/dist/assets/owl.carousel.min.scss";
 //@import "html/libs/superfish/dist/css/superfish";
 //@import "html/libs/font-awesome/scss/font-awesome.scss";
 //@import "html/libs/jQuery.mmenu/dist/css/jquery.mmenu.all";
@@ -182,7 +191,9 @@ a {
 }
 
 @media only screen and (max-width : 640px) {
-
+	.container {
+		padding: 0 2rem;
+	}
 }
 
 @media only screen and (max-width : 480px) {
