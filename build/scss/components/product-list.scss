@@ -1,0 +1,102 @@
+.product-list {
+    margin: 3rem -1.2rem 0 -1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    &.product-list_page_has_sidebar {
+        .product-list__item {
+            width: 33.3333%;
+        }
+    }
+}
+.product-list__item {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    flex: 0 0 auto;
+    width: 25%;
+    padding: 3rem 1.2rem;
+    text-align: center;
+    transition: .3s;
+
+    &:hover, &:active {
+        box-shadow: 0px .5rem 4rem rgba(30, 18, 52, 0.15);
+        .product-list__title {
+            color: $color-accent;
+        }
+    }
+}
+.product-list__img {
+    margin: 0;
+
+    img {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+}
+.product-list__title {
+    margin: 3rem 0 0 0;
+    font-size: 1.8rem;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: .3s;
+}
+.product-list__rate {
+    margin: 2rem 0 0 0;
+
+    display: flex;
+    justify-content: center;
+}
+[class^="product-list__rate-star-"] {
+    flex: 0 0 auto;
+    width: 1.9rem;
+    height: 1.9rem;
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    &:not(:first-child) {
+        margin-left: .5rem;
+    }
+    &:not(:last-child) {
+        margin-right: .5rem;
+    }
+}
+.product-list__rate-star-colored {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 19 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.5 14.25L3.91604 17.1857L4.98248 10.9678L0.464963 6.56434L6.70802 5.65717L9.5 0L12.292 5.65717L18.535 6.56434L14.0175 10.9678L15.084 17.1857L9.5 14.25Z' fill='%23DC281D'/%3E%3C/svg%3E%0A");
+}
+.product-list__rate-star-uncolored {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 19 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.5 14.25L3.91604 17.1857L4.98248 10.9678L0.464963 6.56434L6.70802 5.65717L9.5 0L12.292 5.65717L18.535 6.56434L14.0175 10.9678L15.084 17.1857L9.5 14.25Z' fill='%23D8D8E1'/%3E%3C/svg%3E%0A");
+}
+.product-list__price {
+    margin: 2rem 0 0 0;
+    font-size: 1.8rem;
+}
+
+@media only screen and (max-width : 1280px) {
+
+}
+
+@media only screen and (max-width : 992px) {
+
+}
+
+@media only screen and (max-width : 768px) {
+    .product-list__item {
+        width: 33.3333%;
+    }
+}
+
+@media only screen and (max-width : 640px) {
+
+}
+
+@media only screen and (max-width : 480px) {
+    .product-list__item {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width : 360px) {
+
+}
