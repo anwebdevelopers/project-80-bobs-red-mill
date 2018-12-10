@@ -159,12 +159,40 @@ a {
 //         }
 //     }
 // }
+
+.button {
+	@include btn;
+	padding: 1.8rem 2.5rem;
+	font-size: 1.8rem;
+	font-weight: 700;
+	color: #fff;
+	background-color: $color-main;
+	transition: .3s;
+	&:hover, &:active {
+		background-color: $color-accent;
+		box-shadow: 0 .5rem 6rem rgba(0,0,0,.3);
+	}
+	&.button_background_white {
+		background-color: #fff;
+		color: $color-accent;
+		&:hover, &:active {
+			color: #fff;
+			background-color: $color-accent;
+		}
+	}
+}
+
 //Custom Styles Here
 @import "components/header.scss";
 @import "components/banner.scss";
 @import "components/catalog.scss";
 @import "components/new.scss";
 @import "components/product-list.scss";
+@import "components/call-too-action.scss";
+@import "components/recipes-slider.scss";
+@import "components/instagram.scss";
+
+
 
 //@import "build/scss/components/magnific-popup.scss";
 

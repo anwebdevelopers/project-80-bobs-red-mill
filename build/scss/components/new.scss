@@ -30,22 +30,25 @@
 .new__tabs {
     margin: 4rem 0 0 0;
 }
-.new__tabs-buttons {
+.new__tabs .tabs__buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    button {
-        @include btn;
+    > .tabs__title {
         padding: 0 2rem;
         margin: 1rem 0;
         font-size: 1.6rem;
+        font-weight: 400;
         color: inherit;
         transition: .3s;
+        cursor: pointer;
         &:not(:last-child) {
             border-right: 1px solid $color-main;
         }
         &.active {
-            font-weight: 700;
+            // font-weight: 700;
+            text-shadow: 0 0 0 currentColor;
+            color: #000;
         }
         &:hover, &:active {
             color: $color-accent;
