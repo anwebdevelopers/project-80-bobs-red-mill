@@ -5,6 +5,8 @@ $(function() {
     const $window = $(window);
     let windowWidth = $window.width();
 
+
+
     /*******************************************************/
     //MENU MOBILE
     /*******************************************************/
@@ -19,10 +21,8 @@ $(function() {
         $buttonMenu.toggleClass('active');
     });
 
-    $(window).on('resize', function() {
+    $window.on('resize', function() {
         if (windowWidth != $window.width()) {
-            windowWidth = $window.width();
-
             $menu.removeClass('active');
             $buttonMenu.removeClass('active');
         }
@@ -68,12 +68,13 @@ $(function() {
 
     $('.recipes-home__slider').each(function() {
 
-        $(this).find('.recipes-home__item').not(':first').hide()
+        $(this).find('.recipes-home__item').not(':first').hide();
 
         $(this).find('.recipes-home__item').each(function() {
+
             const $this = $(this);
             let url;
-            console.log($this.siblings('.recipes-home__item'));
+
             if ($this.index('.recipes-home__item') < $this.siblings('.recipes-home__item').length) {
                 url = $this.closest('.recipes-home__slider').find('.recipes-home__item').eq($this.index('.recipes-home__item') + 1).find('.recipes-home__img img').attr('src');
             } else {
@@ -103,6 +104,44 @@ $(function() {
 
             });
         })
+    });
+
+
+    /*******************************************************/
+    //SIDE NAV MOBILE ACCORDION
+    /*******************************************************/
+    $('.page__nav-item').addClass('accordion').find('.page__nav-title').addClass('accordion__button').siblings('.page__nav-list').addClass('accordion__box');
+    const $accordion = $('.accordion');
+    $accordion.on('click', '.accordion__button', function(e)
+    {
+        e.stopPropagation();
+
+        if ($window.width() <= 640) {
+
+            const $this = $(this);
+
+            $this.closest('.accordion').hasClass('active') ? $this.closest('.accordion').removeClass('active') : $this.closest('.accordion').addClass('active').siblings().removeClass('active');
+        }
+    });
+
+
+    /*******************************************************/
+    //CHECK WINDOW HORISONTAL RESIZE
+    /*******************************************************/
+    $window.on('resize', function() {
+        const newWindowWidth = $window.width();
+
+        if (windowWidth != newWindowWidth) {
+
+            windowWidth = newWindowWidth;
+
+            //MENU MOBILE
+            $menu.removeClass('active');
+            $buttonMenu.removeClass('active');
+
+            //SIDE NAV MOBILE ACCORDION
+            $accordion.removeClass('active');
+        }
     });
 
 });

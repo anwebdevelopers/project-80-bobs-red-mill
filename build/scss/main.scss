@@ -8,29 +8,29 @@
 *:focus:-ms-input-placeholder      {color: transparent}
 
 *::-webkit-input-placeholder {
-	color: #000;
-	opacity: .6;
+	color: #545659;
+	opacity: 1;
 }
 *:-moz-placeholder {
-	color: #000;
-	opacity: .6;
+	color: #545659;
+	opacity: 1;
 }
 *::-moz-placeholder {
-	color: #000;
-	opacity: .6;
+	color: #545659;
+	opacity: 1;
 }
 
 *:-ms-input-placeholder {
-	color: #000;
-	opacity: .6;
+	color: #545659;
+	opacity: 1;
 }
 body input:focus:required:invalid,
 body textarea:focus:required:invalid {
-	color: #666;
+	color: #545659;
 }
 body input:required:valid,
 body textarea:required:valid {
-	color: #666;
+	color: #545659;
 }
 *,
 *:before,
@@ -49,7 +49,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-size: 1.6rem;
-	line-height: 1.25;
+	line-height: 1.5;
 	font-weight: 400;
 	font-family: 'Open Sans', sans-serif;
 	color: #545659;
@@ -58,6 +58,7 @@ body {
     -webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	overflow-x: hidden;
 }
 .container {
 	max-width: 1280px;
@@ -180,6 +181,14 @@ a {
 			background-color: $color-accent;
 		}
 	}
+	&.button_background_black {
+		background-color: #000;
+		color: #fff;
+		&:hover, &:active {
+			// color: #fff;
+			background-color: $color-main;
+		}
+	}
 }
 
 //Custom Styles Here
@@ -191,7 +200,10 @@ a {
 @import "components/call-too-action.scss";
 @import "components/recipes-slider.scss";
 @import "components/instagram.scss";
+@import "components/advantages.scss";
+@import "components/footer.scss";
 
+@import "components/page.scss";
 
 
 //@import "build/scss/components/magnific-popup.scss";

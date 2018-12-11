@@ -101,7 +101,7 @@ gulp.task('full', function() {
 
 gulp.task('watch', function() {
     gulp.watch('build/scss/**/*.scss', ['styles']);
-    gulp.watch('html/libs/**/*.js', ['scripts']);
+    // gulp.watch('html/libs/**/*.js', ['scripts']);
     gulp.watch('html/js/*.js').on("change", browserSync.reload);
     gulp.watch('html/*.html').on('change', browserSync.reload);
 
