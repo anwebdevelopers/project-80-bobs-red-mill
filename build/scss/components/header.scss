@@ -256,10 +256,13 @@
 }
 
 @media only screen and (max-width : 640px) {
-
+    .header {
+        z-index: 3;
+    }
 
     .header__box {
         position: relative;
+
     }
     .header__logo {
         margin: 1.5rem 1rem 1.5rem 0;

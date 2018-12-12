@@ -57,7 +57,7 @@
 					<ul>
 						<li><a class="active">Продукция</a></li>
 						<li><a href="#">Скидки</a></li>
-						<li><a href="#">Рецепты</a></li>
+						<li><a href="recipes.html">Рецепты</a></li>
 						<li><a href="#">О нас</a></li>
 						<li><a href="#">Контакты</a></li>
 					</ul>
@@ -188,6 +188,12 @@
 							<figure class="product-item__img">
 								<img src="img/img-product-item.png" alt="">
 							</figure>
+							<figure class="product-item__img">
+								<img src="img/img-product-item.png" alt="">
+							</figure>
+							<figure class="product-item__img">
+								<img src="img/img-product-item.png" alt="">
+							</figure>
 						</div>
 						<div class="product-item__data">
 							<h1 class="product-item__title">Gluten Free Crust Mix Pie 200 gr.</h1>
@@ -206,39 +212,162 @@
 								<div class="product-item__vendorcode">Арт. 54545-45</div>
 							</div>
 							<form class="product-item__form">
-								<select class="product-item__sort">
+								<select class="product-item__sort select-styled">
 									<option>Шоколадный вкус 300 гр.</option>
 									<option>Вкусный вкус 300 гр.</option>
 									<option>Агонь вкус 300 гр.</option>
 								</select>
 								<div class="product-item__flex">
-									<div class="product-item__qty">
-										<button class="product-item__qty-minus">-</button>
-										<input type="text" class="product-item__qty-input">
-										<button class="product-item__qty-plus">+</button>
+									<div class="product-item__quantity quantity">
+										<button type="button" class="quantity__button minus">
+											<svg>
+												<use xlink:href="#icon-minus">
+											</svg>
+										</button>
+										<input type="text" class="quantity__input" value="1">
+										<button type="button" class="quantity__button plus">
+											<svg>
+												<use xlink:href="#icon-plus">
+											</svg>
+										</button>
 									</div>
-									<div class="product-item__sum">1998 KZT</div>
+									<div class="product-item__sum"><b>1998</b> KZT</div>
 								</div>
-								<button class="product-item__submit button">Добавить в корзину</button>
-								<a href="#" class="product-item__find button">Найти в магазине</a>
+								<button class="product-item__submit button button_background_red" type="submit">Добавить в корзину</button>
+								<a href="#" class="product-item__find button button_background_transparent">Найти в магазине</a>
 							</form>
+
 						</div>
 					</div>
 
 					<div class="product-tabs tabs">
+						<div class="product-tabs__head">
+							<div class="product-tabs__share">
+								<h3 class="product-tabs__share-title">Поделиться:</h3>
+								<ul class="product-tabs__share-list">
+									<li><a href="#"><img src="img/icon-inst.svg" alt=""></a></li>
+									<li><a href="#"><img src="img/icon-fb.svg" alt=""></a></li>
+									<li><a href="#"><img src="img/icon-vk.svg" alt=""></a></li>
+								</ul>
+							</div>
+							<div class="product-tabs__buttons tabs__buttons"></div>
+						</div>
 						<div class="tabs__section">
-							<h3 class="product-tabs__title">Описание</h3>
-							<div class="product-subscribtion">
-								<figure class="product-subscribtion__img">
-									<img src="img/img-product-subscribtion.png" alt="">
+							<h3 class="product-tabs__title tabs__title">Описание</h3>
+							<div class="product-description">
+								<figure class="product-description__img">
+									<img src="img/img-product-description.png" alt="">
 								</figure>
-								<div class="product-subscribtion__content">
-									<div class="product-subscribtion__text">
+								<div class="product-description__content">
+									<div class="product-description__text">
 										<p>Безглютеновая мука для пирога берет догадки из десерта без глютена! Благодаря этому исключительному сочетанию, «легко, как пирог», сделать вкусную, шелушащуюся кору, которая прекрасно работает с любым рецептом.</p>
 										<p>Идеально подходит для начинок из фруктов, сливок, а также заварных кремов и галеток, Bob’s Red Mill Gluten Free Pie Crust Mix не разочарует. Плюс, это безаллергенное, поэтому вы можете смело делиться со своей семьей.</p>
 									</div>
+									<h3 class="product-description__title">Состав:</h3>
+									<div class="product-description__table">
+										<table>
+											<tbody>
+												<tr>
+													<td>Мука высший сорт </td>
+													<td>180 gr.</td>
+												</tr>
+												<tr>
+													<td>Армотизатор натуральный вишня</td>
+													<td>180 gr.</td>
+												</tr>
+												<tr>
+													<td>Миндаль дробленный, натуральный</td>
+													<td>180 gr.</td>
+												</tr>
+												<tr>
+													<td>Сахар</td>
+													<td>180 gr.</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
 								</div>
 							</div>
+						</div>
+						<div class="tabs__section">
+							<h3 class="product-tabs__title tabs__title">Рецепты</h3>
+							<div class="recipes-list">
+								<a href="recipe-item.html" class="recipes-list-item">
+									<figure class="recipes-list-item__img">
+										<img src="img/img-recipes-list-item1.png" alt="">
+									</figure>
+									<div class="recipes-list-item__content">
+										<h4 class="recipes-list-item__title">Рецепт пирога из гранолы на завтрак</h4>
+									</div>
+								</a>
+								<a href="recipe-item.html" class="recipes-list-item">
+									<figure class="recipes-list-item__img">
+										<img src="img/img-recipes-list-item2.png" alt="">
+									</figure>
+									<div class="recipes-list-item__content">
+										<h4 class="recipes-list-item__title">Пончики с шоколадной глазурью</h4>
+									</div>
+								</a>
+								<a href="recipe-item.html" class="recipes-list-item">
+									<figure class="recipes-list-item__img">
+										<img src="img/img-recipes-list-item3.png" alt="">
+									</figure>
+									<div class="recipes-list-item__content">
+										<h4 class="recipes-list-item__title">Рецепт пирога из гранолы на завтрак</h4>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="tabs__section">
+							<h3 class="product-tabs__title tabs__title">Отзывы</h3>
+						</div>
+					</div>
+
+					<div class="product-similar">
+						<h2 class="product-similar__title"></h2>
+						<div class="product-list">
+							<a href="item.html" class="product-list-item">
+								<figure class="product-list-item__img">
+									<img src="img/img-product1.png" alt="">
+								</figure>
+								<h3 class="product-list-item__title">Organic Masa Harina</h3>
+								<div class="product-list-item__rate">
+									<div class="product-list-item__rate-star-colored"></div>
+									<div class="product-list-item__rate-star-colored"></div>
+									<div class="product-list-item__rate-star-colored"></div>
+									<div class="product-list-item__rate-star-colored"></div>
+									<div class="product-list-item__rate-star-uncolored"></div>
+								</div>
+								<div class="product-list-item__price">988 KZT</div>
+							</a>
+							<a href="item.html" class="product-list-item">
+								<figure class="product-list-item__img">
+									<img src="img/img-product2.png" alt="">
+								</figure>
+								<h3 class="product-list-item__title">Organic Masa Harina</h3>
+								<div class="product-list-item__rate">
+									<div class="product-list-item__rate-star-colored"></div>
+									<div class="product-list-item__rate-star-colored"></div>
+									<div class="product-list-item__rate-star-colored"></div>
+									<div class="product-list-item__rate-star-colored"></div>
+									<div class="product-list-item__rate-star-uncolored"></div>
+								</div>
+								<div class="product-list-item__price">988 KZT</div>
+							</a>
+							<a href="item.html" class="product-list-item">
+								<figure class="product-list-item__img">
+									<img src="img/img-product3.png" alt="">
+								</figure>
+								<h3 class="product-list-item__title">Organic Masa Harina</h3>
+								<div class="product-list-item__rate">
+									<div class="product-list-item__rate-star-colored"></div>
+									<div class="product-list-item__rate-star-colored"></div>
+									<div class="product-list-item__rate-star-colored"></div>
+									<div class="product-list-item__rate-star-colored"></div>
+									<div class="product-list-item__rate-star-uncolored"></div>
+								</div>
+								<div class="product-list-item__price">988 KZT</div>
+							</a>
 						</div>
 					</div>
 				</main>
@@ -320,7 +449,7 @@
 						<div class="footer__main-menu-item">
 							<h3 class="footer__main-menu-title">Магазин</h3>
 							<ul class="footer__main-menu-list">
-								<li><a href="#">Продукция</a></li>
+								<li><a href="catalog.html">Продукция</a></li>
 								<li><a href="#">Личный магазин</a></li>
 								<li><a href="#">Точки продаж</a></li>
 								<li><a href="#">Доставка и оплата</a></li>
@@ -383,6 +512,13 @@
 				    stroke-linejoin="round" />
 				<path d="M5.67 6H23L21.32 14.39C21.1313 15.3402 20.2886 16.0186 19.32 16H8.75C7.73948 16.0086 6.88134 15.262 6.75 14.26L5.23 2.74C5.09962 1.7456 4.25291 1.00152 3.25 1H1" stroke="currentColor" stroke-width="2" stroke-linecap="round"
 				    stroke-linejoin="round" />
+			</symbol>
+			<symbol id="icon-minus" viewBox="0 0 16 2" fill="none">
+				<path d="M1 1H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</symbol>
+			<symbol id="icon-plus" viewBox="0 0 16 16" fill="none">
+				<path d="M8 1V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M1 8H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 			</symbol>
 		</svg>
 	</div>

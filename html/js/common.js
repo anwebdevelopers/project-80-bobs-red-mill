@@ -51,7 +51,9 @@ $(function() {
     $('.tabs').each(function() {
         const $this = $(this);
 
-        $this.prepend('<div class="tabs__buttons"></div>');
+        if ( ! $this.find('.tabs__buttons').length ) {
+            $this.prepend('<div class="tabs__buttons"></div>');
+        }
 
         $this.find('.tabs__title').appendTo($this.find('.tabs__buttons')).first().addClass('active');
 
@@ -126,7 +128,46 @@ $(function() {
 
 
     /*******************************************************/
-    //CHECK WINDOW HORISONTAL RESIZE
+    //PRODUCT ITEM SLIDER
+    /*******************************************************/
+    $('.product-item__slider').addClass('owl-carousel').owlCarousel({
+        loop: true,
+        items: 1,
+        nav: false,
+        navText: '',
+        autoplayTimeout: 5000,
+        autoplay: true,
+        smartSpeed: 600,
+        onInitialized: function() {
+            $('.product-item__slider').each(function() {
+                $(this).find('.owl-item:not(.cloned) .product-item__img img').each(function() {
+                    $(this).closest('.product-item__slider').find('.owl-dot').eq($(this).index('.owl-item:not(.cloned) .product-item__img img')).html('<img src="' + $(this).attr('src') + '">');
+                });
+            });
+        }
+    });
+
+
+    /*******************************************************/
+    //QUANTITY CHANGE
+    /*******************************************************/
+
+    $('.quantity').each(function() {
+        $(this).find('.quantity__button').on('click', function() {
+            const $input = $(this).closest('.quantity').find('.quantity__input');
+            const value = +$input.val();
+
+            if ($(this).hasClass('minus') && value > 0) {
+                $input.val(value - 1).attr('value', value - 1);
+            } else if ($(this).hasClass('plus')) {
+                $input.val(value + 1).attr('value', value + 1);
+            }
+        });
+    });
+
+
+    /*******************************************************/
+    //WINDOW HORISONTAL RESIZE
     /*******************************************************/
     $window.on('resize', function() {
         const newWindowWidth = $window.width();

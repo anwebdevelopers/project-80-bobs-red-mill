@@ -81,31 +81,15 @@
     flex: 1 1 auto;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 2.4rem;
+    font-size: 3.2rem;
+    line-height: 1.2;
     font-weight: 400;
     font-family: 'Coco Gothic';
     color: #1D1E1F;
 }
 .page__head-filter {
-    @include input;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
-    appearance: none!important;
-    &::-ms-expand {
-        display: none;
-    }
     flex: 0 0 auto;
     width: 30rem;
-    padding: 1rem 3.5rem 1rem 1.5rem;
-    font-size: 1.6rem;
-    color: inherit;
-    background-color: #F4F5F7;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 1L7 7L1 1' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
-    background-position: calc(100% - 1.5rem) 50%;
-    background-size: 1.4rem .8rem;
-    background-repeat: no-repeat;
 }
 .page__button {
     margin-top: 6rem;
@@ -124,7 +108,7 @@
         display: block;
     }
     .page__head-filter {
-        margin-top: 2rem;
+        margin-top: 4rem;
         width: 100%;
     }
 }
@@ -143,10 +127,13 @@
         margin-left: 0;
     }
     .page__nav {
-        margin-top: 1rem;
+        margin-top: 4rem;
+
+        position: relative;
+        z-index: 2;
     }
     .page__head {
-        margin-top: 2rem;
+        // margin-top: 2rem;
     }
     .page__nav-item.accordion {
         + .page__nav-item.accordion {

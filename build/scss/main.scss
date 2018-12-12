@@ -165,9 +165,11 @@ a {
 	@include btn;
 	padding: 1.8rem 2.5rem;
 	font-size: 1.8rem;
+	line-height: 1.25;
 	font-weight: 700;
 	color: #fff;
 	background-color: $color-main;
+	text-align: center;
 	transition: .3s;
 	&:hover, &:active {
 		background-color: $color-accent;
@@ -189,6 +191,78 @@ a {
 			background-color: $color-main;
 		}
 	}
+	&.button_background_red {
+		background-color: $color-accent;
+		&:hover, &:active {
+			filter: saturate(1.5);
+		}
+	}
+	&.button_background_transparent {
+		padding-top: 1.6rem;
+		padding-bottom: 1.6rem;
+		color: $color-accent;
+		border: 2px solid currentColor;
+		background-color: rgba(0,0,0,0);
+
+		&:hover, &:active {
+			color: #fff;
+			border-color: $color-main;
+			background-color: $color-main;
+		}
+	}
+}
+
+.select-styled {
+	@include input;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none!important;
+    &::-ms-expand {
+        display: none;
+    }
+	padding: 1rem 3.5rem 1rem 1.5rem;
+    font-size: 1.6rem;
+    color: inherit;
+    background-color: #F4F5F7;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 1L7 7L1 1' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    background-position: calc(100% - 1.5rem) 50%;
+    background-size: 1.4rem .8rem;
+    background-repeat: no-repeat;
+}
+
+.quantity {
+	display: flex;
+}
+.quantity__button {
+	@include btn;
+	width: 4rem;
+	height: 4rem;
+	transition: .3s;
+
+	&:hover, &:active {
+		color: $color-accent;
+	}
+
+	svg {
+		width: 1.6rem;
+		height: 1.6rem;
+	}
+}
+.quantity__input {
+	@include input;
+	width: 6rem;
+	height: 4rem;
+	margin: 0 1rem;
+	padding: .8rem 1rem;
+	border-radius: .4rem;
+	font-size: 2.4rem;
+	line-height: 1;
+	font-weight: 700;
+	color: #1D1E1F;
+	text-align: center;
+	background-color: #F4F5F7;
 }
 
 //Custom Styles Here
@@ -204,6 +278,10 @@ a {
 @import "components/footer.scss";
 
 @import "components/page.scss";
+@import "components/product-item.scss";
+@import "components/recipes-list.scss";
+
+
 
 
 //@import "build/scss/components/magnific-popup.scss";
