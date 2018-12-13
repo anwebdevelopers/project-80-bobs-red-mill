@@ -163,14 +163,14 @@
     .banner__item {
         text-align: center;
         &:before {
-        background: linear-gradient(180deg, rgba(242, 243, 245, 0.0001) 0%, rgba(255, 255, 255, 0.9) 35%, rgba(255, 255, 255, 0.9) 65%, rgba(242, 243, 245, 0.0001) 100%);
+            background: linear-gradient(180deg, rgba(242, 243, 245, 0.0001) 0%, rgba(255, 255, 255, 0.9) 35%, rgba(255, 255, 255, 0.9) 65%, rgba(242, 243, 245, 0.0001) 100%);
         }
     }
     .banner__title {
-        max-width: initial;
+        max-width: 100%;
     }
     .banner__text {
-        max-width: initial;
+        max-width: 100%;
     }
 }
 

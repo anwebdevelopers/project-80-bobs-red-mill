@@ -237,7 +237,7 @@
         flex-wrap: wrap;
     }
     .header__controls {
-        order: initial;
+        order: 0;
         flex: 0 0 auto;
     }
     .header__menu {
@@ -266,6 +266,9 @@
     }
     .header__logo {
         margin: 1.5rem 1rem 1.5rem 0;
+    }
+    .header__controls {
+        margin-left: auto;
     }
     .header__search {
         margin: 1.5rem 1rem 1.5rem 0;
@@ -321,6 +324,9 @@
 @media only screen and (max-width : 480px) {
     .header__box {
         display: block;
+    }
+    .header__controls {
+        margin-left: 0;
     }
     .header__logo {
         margin: 1.5rem 0;

@@ -4,14 +4,19 @@
     display: flex;
     flex-wrap: wrap;
 
-    &.recipes-list_masonry {
+    > .recipes-list-item {
+        flex: 0 0 auto;
+        width: calc(33.3333% - 2.5rem);
+    }
+
+    &.recipes-list_layout_masonry {
         display: block;
         &:after {
             content: '';
             display: block;
             clear: both;
         }
-        .recipes-list-item {
+        > .recipes-list-item {
             float: left;
             &:nth-child(14n-13),
             &:nth-child(14n) {
@@ -49,10 +54,10 @@
 }
 @supports ( display: grid ) {
     .recipes-list {
-        &.recipes-list_masonry {
+        &.recipes-list_layout_masonry {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            .recipes-list-item {
+            > .recipes-list-item {
                 width: auto;
                 &:nth-child(14n-13),
                 &:nth-child(14n) {
@@ -87,8 +92,6 @@
     text-decoration: none;
     color: inherit;
     display: block;
-    flex: 0 0 auto;
-    width: calc(33.3333% - 2.5rem);
     margin: 1.25rem;
     transition: .3s;
 
@@ -160,13 +163,15 @@
 }
 
 @media only screen and (max-width : 992px) {
-    .recipes-list-item {
-        width: calc(50% - 2.5rem);
+    .recipes-list {
+        > .recipes-list-item {
+            width: calc(50% - 2.5rem);
+        }
     }
 
     .recipes-list {
-        &.recipes-list_masonry {
-            .recipes-list-item {
+        &.recipes-list_layout_masonry {
+            > .recipes-list-item {
                 &:nth-child(14n-13),
                 &:nth-child(14n) {
                     .recipes-list-item__img {
@@ -186,9 +191,9 @@
 
     @supports ( display: grid ) {
         .recipes-list {
-            &.recipes-list_masonry {
+            &.recipes-list_layout_masonry {
                 grid-template-columns: 1fr 1fr;
-                .recipes-list-item {
+                > .recipes-list-item {
                     width: auto;
                     &:nth-child(14n-13),
                     &:nth-child(14n) {
@@ -220,15 +225,17 @@
         margin-right: 0;
     }
 
-    .recipes-list-item {
-        width: auto;
-        margin: 2rem 0 0 0;
+    .recipes-list {
+        > .recipes-list-item {
+            width: auto;
+            margin: 2rem 0 0 0;
+        }
     }
 
 
     .recipes-list {
-        &.recipes-list_masonry {
-            .recipes-list-item {
+        &.recipes-list_layout_masonry {
+            > .recipes-list-item {
                 float: none;
                 width: auto;
                 &:nth-child(14n-13),
@@ -257,9 +264,9 @@
 
     @supports ( display: grid ) {
         .recipes-list {
-            &.recipes-list_masonry {
+            &.recipes-list_layout_masonry {
                 display: block;
-                .recipes-list-item {
+                > .recipes-list-item {
                     &:nth-child(14n-13),
                     &:nth-child(14n) {
                         .recipes-list-item__img {

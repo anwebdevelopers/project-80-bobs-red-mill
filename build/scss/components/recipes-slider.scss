@@ -93,15 +93,9 @@
     order: 2;
     width: 40%;
     margin: -7rem 0 0 5%;
-}
-.recipes-home__review-content {
-    padding-top: 7rem;
-    font-size: 1.4rem;
-    font-weight: 300;
-    line-height: 1.8;
-    font-style: italic;
 
     position: relative;
+    padding-top: 7rem;
     &:before {
         content: '';
         position: absolute;
@@ -114,41 +108,8 @@
         background-size: contain;
         background-repeat: no-repeat;
     }
-    > * {
-        &:first-child{margin-top: 0;}
-        &:last-child{margin-bottom: 0;}
-    }
 }
-.recipes-home__review-flex {
-    margin-top: 3rem;
 
-    display: flex;
-    align-items: center;
-}
-.recipes-home__review-img {
-    margin: 0;
-    flex: 0 0 auto;
-    width: 5.6rem;
-    height: 5.6rem;
-    img {
-        max-width: 100%;
-        width: auto;
-        height: auto;
-        border-radius: 50%;
-    }
-}
-.recipes-home__review-data {
-    flex: 1 1 auto;
-    margin-left: 2rem;
-}
-.recipes-home__review-title {
-    font-size: 1.4rem;
-}
-.recipes-home__review-text {
-    margin-top: .5rem;
-    font-size: 1.4rem;
-    opacity: .4;
-}
 
 .recipes-home__next {
     flex: 0 0 auto;
@@ -201,13 +162,13 @@
 
 @media only screen and (max-width : 768px) {
     .recipes-home__review {
-        order: initial;
+        order: 0;
         margin-left: 8%;
         width: 60%;
         margin-bottom: 20rem;
     }
     .recipes-home__next {
-        order: initial;
+        order: 0;
         margin-top: -14rem;
         margin-left: 44%;
         width: 40%;
@@ -230,7 +191,7 @@
         width: 40%;
     }
     .recipes-home__review {
-        order: initial;
+        order: 0;
         margin-top: 6rem;
         margin-left: 5%;
         width: 55%
@@ -269,25 +230,24 @@
         margin-left: 0;
         margin-bottom: 0;
         width: auto;
-    }
-    .recipes-home__review-content {
         &:before {
             left: 50%;
             transform: translateX(-50%);
         }
+        .reviews-list-item__box {
+            display: block;
+        }
+        .reviews-list-item__img {
+            margin: 0 auto;
+        }
+        .reviews-list-item__data {
+            margin-left: 0;
+            margin-top: 1rem;
+        }
     }
-    .recipes-home__review-flex {
-        display: block;
-    }
-    .recipes-home__review-img {
-        margin: 0 auto;
-    }
-    .recipes-home__review-data {
-        margin-left: 0;
-        margin-top: 1rem;
-    }
+
     .recipes-home__next {
-        order: initial;
+        order: 0;
         margin: 6rem auto 0 auto;
         width: 70%;
     }

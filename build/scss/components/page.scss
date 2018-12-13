@@ -16,15 +16,15 @@
     width: calc(77% - 5rem);
 }
 
-.page__nav {
+.page__aside-nav {
     margin-top: 8rem;
 }
-.page__nav-item {
-    + .page__nav-item {
+.page__aside-nav-item {
+    + .page__aside-nav-item {
         margin-top: 6rem;
     }
 }
-.page__nav-title {
+.page__aside-nav-title {
     margin: 0;
     font-size: 2.4rem;
     font-weight: 400;
@@ -33,14 +33,14 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.page__nav-list {
+.page__aside-nav-list {
     padding: 0;
     list-style: none;
     margin: 3rem 0 0 0;
 
     font-size: 1.6rem;
 }
-.page__nav-list-item {
+.page__aside-nav-list-item {
     text-decoration: none;
     color: inherit;
     display: block;
@@ -48,27 +48,114 @@
 
     &:hover, &:active {
 
-        .page__nav-list-title {
+        .page__aside-nav-list-title {
             text-shadow: 0 0 0 currentColor;
             color: $color-accent;
         }
-        .page__nav-list-qty {
+        .page__aside-nav-list-qty {
             opacity: 1;
         }
     }
 
     display: flex;
 }
-.page__nav-list-title {
+.page__aside-nav-list-title {
     flex: 1 1 auto;
     overflow: hidden;
     text-overflow: ellipsis;
     transition: .3s;
 }
-.page__nav-list-qty {
+.page__aside-nav-list-qty {
     flex: 0 0 auto;
     opacity: .3;
     transition: .3s;
+}
+.page__aside-title {
+    margin: 8rem 0 0 0;
+    font-size: 3.2rem;
+    text-transform: none;
+    text-align: center;
+    &.page__aside-title_opacity {
+        opacity:.4;
+    }
+}
+.page__aside-product-list {
+    margin-top: 3rem;
+    > .product-list-item {
+        // padding: 0;
+        // margin-top: 6rem;
+    }
+}
+.page__aside-button {
+    margin-top: 6rem;
+    text-align: center;
+}
+.page__aside-social {
+    margin-top: 6rem;
+    text-align: center;
+}
+.page__aside-social-title {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+.page__aside-social-list {
+    margin: 0 -1.5rem;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    li {
+        flex: 0 0 auto;
+        margin: 2rem 1.5rem 0 1.5rem;
+        a {
+            text-decoration: none;
+            display: block;
+            width: 4.8rem;
+            height: 4.8rem;
+            border-radius: 50%;
+            transition: .3s;
+
+            &:hover, &:active {
+                box-shadow: 0px .5rem 4rem rgba(0, 0, 0, .3);
+            }
+            img {
+                max-width: 100%;
+                max-height: 100%;
+                width: auto;
+                height: auto;
+            }
+        }
+    }
+}
+.page__aside-recipes-list {
+
+    margin: 4rem -1.25rem 0 -1.25rem;
+    > .recipes-list-item {
+
+    }
+}
+.page__aside-other {
+    padding: 0;
+    list-style: none;
+    margin: 4rem 0 0 0;
+
+    font-size: 3.2rem;
+    color: #2D2E30;
+    text-align: center;
+    li {
+        margin-top: 2rem;
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: .3s;
+            &:hover, &:active {
+                color: $color-accent;
+            }
+        }
+    }
 }
 
 .page__head {
@@ -111,9 +198,6 @@
         margin-top: 4rem;
         width: 100%;
     }
-}
-
-@media only screen and (max-width : 640px) {
     .page__box {
         display: block;
     }
@@ -126,7 +210,7 @@
     .page__box > [class^='page__'] + [class^='page__'] {
         margin-left: 0;
     }
-    .page__nav {
+    .page__aside-nav {
         margin-top: 4rem;
 
         position: relative;
@@ -135,19 +219,20 @@
     .page__head {
         // margin-top: 2rem;
     }
-    .page__nav-item.accordion {
-        + .page__nav-item.accordion {
+    .page__aside-nav-item.accordion {
+        + .page__aside-nav-item.accordion {
             margin-top: 0;
         }
         position: relative;
         &.active {
-            .page__nav-title.accordion__button {
+            .page__aside-nav-title.accordion__button {
                 &:before {
                     transform: rotate(135deg);
                     background-color: $color-accent;
+                    color: #fff;
                 }
             }
-            .page__nav-list.accordion__box {
+            .page__aside-nav-list.accordion__box {
                 visibility: visible;
                 opacity: 1;
                 transform: translateY(100%) scaleY(1);
@@ -155,7 +240,7 @@
         }
 
     }
-    .page__nav-title.accordion__button {
+    .page__aside-nav-title.accordion__button {
         padding: 1.5rem 3.5rem 1.5rem 0;
         border-bottom: 1px solid #D8D8E1;
 
@@ -169,15 +254,15 @@
             width: 3.5rem;
             height: 3.5rem;
             border-radius: 50%;
-            background-color: $color-main;
-            background-image: linear-gradient(#fff,#fff),linear-gradient(#fff,#fff);
+            background-color: #D8D8E1;
+            background-image: linear-gradient(currentColor,currentColor),linear-gradient(currentColor,currentColor);
             background-size: 1.1rem 2px,2px 1.1rem;
             background-position: 50% 50%,50% 50%;
             background-repeat: no-repeat;
             transition: .3s;
         }
     }
-    .page__nav-list.accordion__box {
+    .page__aside-nav-list.accordion__box {
         position: absolute;
         z-index: 1;
         left: 0;
@@ -194,10 +279,47 @@
         margin: 0;
         padding: 0 2rem 2rem 2rem;
     }
+    .page__aside-product-list {
+        display: flex;
+        flex-wrap: wrap;
+        > .product-list-item {
+            width: 50%;
+            // padding: 0;
+            // margin-top: 6rem;
+        }
+    }
+    .page__aside-recipes-list {
+        display: flex;
+        flex-wrap: wrap;
+        > .recipes-list-item {
+            width: calc(50% - 2.5rem);
+            // padding: 0;
+            // margin-top: 6rem;
+        }
+    }
+}
+
+@media only screen and (max-width : 640px) {
+
 }
 
 @media only screen and (max-width : 480px) {
-
+    .page__aside-product-list {
+        display: block;
+        > .product-list-item {
+            width: auto;
+            // padding: 0;
+            // margin-top: 6rem;
+        }
+    }
+    .page__aside-recipes-list {
+        display: block;
+        > .recipes-list-item {
+            width: auto;
+            // padding: 0;
+            // margin-top: 6rem;
+        }
+    }
 }
 
 @media only screen and (max-width : 360px) {

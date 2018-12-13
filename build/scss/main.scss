@@ -45,10 +45,10 @@ html {
 body {
 	position: relative;
 	min-width: 320px;
-	height: 100%;
+	min-height: 100%;
 	margin: 0;
 	padding: 0;
-	font-size: 1.6rem;
+	font-size: 1.8rem;
 	line-height: 1.5;
 	font-weight: 400;
 	font-family: 'Open Sans', sans-serif;
@@ -59,6 +59,10 @@ body {
 	text-rendering: optimizeLegibility;
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 	overflow-x: hidden;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 .container {
 	max-width: 1280px;
@@ -80,86 +84,107 @@ a {
 	margin: 0;
 	font-size: 4.8rem;
 	font-weight: 400;
+	line-height: 1.25;
 	text-transform: uppercase;
 	color: #2D2E30;
+	font-family: 'Coco Gothic';
 	overflow: hidden;
     text-overflow: ellipsis;
 }
-// .text {
-// 	* {
-// 		max-width: 100% !important;
-// 	}
-// 	h1,h2,h3,h4,h5,h6 {
-// 		font-weight: 700;
-// 		text-transform: uppercase;
-// 		// color: #3436c0;
-// 	}
-// 	p,ul,ol,img {
-// 		margin-top: 3rem;
-// 		margin-bottom: 3rem;
-// 	}
-// 	ul,ol {
-// 		li {
-// 			margin: 1.5rem 0 0 0;
-// 		}
-// 	}
-// 	ul {
-// 		padding: 0;
-// 	    list-style: none;
-// 	    li {
-// 	        padding: 0 0 0 4rem;
-// 	        background-image: linear-gradient($color-blue, $color-blue);
-// 	        background-position: 0 1.4rem;
-// 	        background-size: 2.5rem 2px;
-// 	        background-repeat: no-repeat;
-// 	    }
-// 	}
-// 	a:not([class]) {
-// 		text-decoration: none;
-// 		color: $color-blue;
-// 		transition: all 0.5s ease;
-// 		&:active,
-// 		&:hover {
-// 			text-decoration: underline;
-// 		}
-// 	}
-// 	*:first-child {
-// 		margin-top: 0;
-// 	}
-// 	*:last-child {
-// 		margin-bottom: 0;
-// 	}
-// 	*.align-left {
-// 		float: left;
-// 		margin-right: 5rem;
-// 	}
-// 	*.align-right {
-// 		float: right;
-// 		margin-right: 5rem;
-// 	}
-// 	table {
-//         border-collapse: separate;
-//         border-spacing: 2px;
-//         border-color: #dadada;
-//         display: block;
-//         overflow-x: auto;
-// 		max-width: 100%;
-// 		font-size: 1.4rem;
-//
-//         th, td {
-//             padding: 2rem;
-//             text-align: left;
-//         }
-//         th {
-//             background-color: $color-blue;
-// 			color: #fff;
-//         }
-//         td {
-//             background-color: #fff;
-// 			color: #000;
-//         }
-//     }
-// }
+.content {
+	margin-top: 8rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	* {
+		max-width: 100% !important;
+	}
+	h1,h2,h3,h4,h5,h6 {
+		font-weight: 400;
+		font-family: 'Coco Gothic';
+		color: #2D2E30;
+		text-shadow: 0 0 0 currentColor;
+	}
+	h1 {
+		font-size: 2em;
+	}
+	h2 {
+		font-size: 1.75em;
+	}
+	h3 {
+		font-size: 1.5em;
+	}
+	p,ul,ol,img {
+		margin-top: 3rem;
+		margin-bottom: 3rem;
+	}
+	ul,ol {
+		li {
+			margin: 1.5rem 0 0 0;
+		}
+	}
+	// ul {
+	// 	padding: 0;
+	//     list-style: none;
+	//     li {
+	//         padding: 0 0 0 4rem;
+	//         background-image: linear-gradient($color-main, $color-main);
+	//         background-position: 0 1.4rem;
+	//         background-size: 2.5rem 2px;
+	//         background-repeat: no-repeat;
+	//     }
+	// }
+	a:not([class]) {
+		text-decoration-color: rgba(0,0,0,0);
+		color: $color-accent;
+		transition: 0.3s;
+		&:active,
+		&:hover {
+			text-decoration-color: $color-accent;
+		}
+	}
+	*:first-child {
+		margin-top: 0;
+	}
+	*:last-child {
+		margin-bottom: 0;
+	}
+	*.align-left {
+		float: left;
+		margin-right: 6rem;
+	}
+	*.align-right {
+		float: right;
+		margin-left: 6rem;
+	}
+	table {
+        // border-collapse: separate;
+        // border-spacing: 2px;
+        // border-color: #dadada;
+        display: block;
+        overflow-x: auto;
+		font-size: 1.4rem;
+
+        th, td {
+            padding: .5rem 1.2rem;
+			&:first-child {
+				padding-left: 0;
+			}
+			&:last-child {
+				padding-right: 0;
+			}
+            text-align: left;
+        }
+        th {
+            // background-color: $color-main;
+			color: #2D2E30;
+			text-transform: uppercase;
+        }
+        td {
+            // background-color: #fff;
+			color: #000;
+        }
+    }
+}
 
 .button {
 	@include btn;
@@ -280,7 +305,10 @@ a {
 @import "components/page.scss";
 @import "components/product-item.scss";
 @import "components/recipes-list.scss";
-
+@import "components/recipes-item.scss";
+@import "components/respond.scss";
+@import "components/about.scss";
+@import "components/cart.scss";
 
 
 

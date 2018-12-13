@@ -112,7 +112,7 @@ $(function() {
     /*******************************************************/
     //SIDE NAV MOBILE ACCORDION
     /*******************************************************/
-    $('.page__nav-item').addClass('accordion').find('.page__nav-title').addClass('accordion__button').siblings('.page__nav-list').addClass('accordion__box');
+    $('.page__aside-nav-item').addClass('accordion').find('.page__aside-nav-title').addClass('accordion__button').siblings('.page__aside-nav-list').addClass('accordion__box');
     const $accordion = $('.accordion');
     $accordion.on('click', '.accordion__button', function(e)
     {
