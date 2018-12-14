@@ -9,20 +9,20 @@
 
 *::-webkit-input-placeholder {
 	color: #545659;
-	opacity: 1;
+	opacity: .6;
 }
 *:-moz-placeholder {
 	color: #545659;
-	opacity: 1;
+	opacity: .6;
 }
 *::-moz-placeholder {
 	color: #545659;
-	opacity: 1;
+	opacity: .6;
 }
 
 *:-ms-input-placeholder {
 	color: #545659;
-	opacity: 1;
+	opacity: .6;
 }
 body input:focus:required:invalid,
 body textarea:focus:required:invalid {
@@ -237,7 +237,7 @@ a {
 	}
 }
 
-.select-styled {
+.select {
 	@include input;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -247,7 +247,7 @@ a {
     &::-ms-expand {
         display: none;
     }
-	padding: 1rem 3.5rem 1rem 1.5rem;
+	padding: 1.5rem 3.5rem 1.5rem 1.5rem;
     font-size: 1.6rem;
     color: inherit;
     background-color: #F4F5F7;
@@ -255,6 +255,16 @@ a {
     background-position: calc(100% - 1.5rem) 50%;
     background-size: 1.4rem .8rem;
     background-repeat: no-repeat;
+}
+.input {
+	@include input;
+	padding: 1.5rem 1.5rem;
+    font-size: 1.6rem;
+    color: inherit;
+    background-color: #F4F5F7;
+}
+textarea.input {
+	resize: vertical;
 }
 
 .quantity {
@@ -264,6 +274,7 @@ a {
 	@include btn;
 	width: 4rem;
 	height: 4rem;
+	color: #000;
 	transition: .3s;
 
 	&:hover, &:active {
@@ -309,8 +320,9 @@ a {
 @import "components/respond.scss";
 @import "components/about.scss";
 @import "components/cart.scss";
-
-
+@import "components/order.scss";
+@import "components/map.scss";
+@import "components/contacts.scss";
 
 //@import "build/scss/components/magnific-popup.scss";
 

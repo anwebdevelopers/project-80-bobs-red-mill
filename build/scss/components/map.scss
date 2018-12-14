@@ -1,0 +1,26 @@
+.map {
+    min-height: 46rem;
+    padding: 4rem 0;
+
+    position: relative;
+}
+.map__frame {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+.map__content {
+    position: relative;
+    z-index: 1;
+}
+// .map__box {
+//     display: flex;
+// }
+.map__title {
+    text-transform: none;
+    position: relative;
+    z-index: 1;
+}

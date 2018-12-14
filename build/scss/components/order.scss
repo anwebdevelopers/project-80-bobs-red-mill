@@ -1,0 +1,125 @@
+.order {
+    padding: 8rem 0;
+}
+.order__title {
+    text-transform: none;
+}
+.order__form {
+    margin-top: 6rem;
+    max-width: 80rem;
+
+
+}
+.form {
+    display: flex;
+    flex-wrap: wrap;
+}
+.form__field {
+    flex: 0 0 auto;
+    width: calc(50% - 1.5rem);
+    margin-top: 3rem;
+    + .form__field {
+        margin-left: 3rem;
+    }
+}
+.form__field-label {
+    display: block;
+    font-size: 1.6rem;
+}
+.form__field-input {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+}
+.form__area {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-top: 3rem;
+}
+.form__area-label {
+    display: block;
+    font-size: 1.6rem;
+}
+.form__area-input {
+    display: block;
+    width: 100%;
+    height: 4.8rem;
+    margin-top: 1rem;
+    &[rows] {
+        height: auto;
+    }
+}
+.form__radio {
+    flex: 0 1 auto;
+    width: auto;
+    margin: 3rem 3rem 0 0;
+}
+.form__radio-input {
+    display: none;
+    &:checked + .form__radio-label {
+        &:before {
+            background-color: $color-accent;
+        }
+    }
+}
+.form__radio-label {
+    display: block;
+
+    padding-left: 4rem;
+    font-size: 1.6rem;
+
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: #D8D8E1;
+        border: .4rem solid #D8D8E1;
+    }
+}
+.form__submit {
+    flex: 0 1 auto;
+    margin-top: 3rem;
+}
+.order__payment {
+    margin-top: 6rem;
+}
+
+@media only screen and (max-width : 1280px) {
+
+}
+
+@media only screen and (max-width : 992px) {
+
+}
+
+@media only screen and (max-width : 768px) {
+
+}
+
+@media only screen and (max-width : 640px) {
+
+}
+
+@media only screen and (max-width : 480px) {
+    .form__box {
+        display: block;
+    }
+    .form__field {
+        width: 100%;
+        + .form__field {
+            margin-left: 0;
+        }
+    }
+    .form__area-input {
+        height: 8rem;
+    }
+}
+
+@media only screen and (max-width : 360px) {
+
+}

@@ -59,7 +59,7 @@
 						<li><a href="catalog.html">Скидки</a></li>
 						<li><a href="recipes.html">Рецепты</a></li>
 						<li><a href="about.html">О нас</a></li>
-						<li><a href="#">Контакты</a></li>
+						<li><a href="contacts.html">Контакты</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -67,7 +67,7 @@
 	</header>
 
 	<section class="cart">
-		<form class="container">
+		<div class="container">
 			<h1 class="cart__title title">Ваш заказ</h1>
 			<div class="cart__box">
 				<div class="cart__item">
@@ -96,14 +96,94 @@
 							</button>
 						</div>
 					</div>
-					<div class="cart__item-price"></div>
+					<div class="cart__item-price"><b>1988</b> KZT</div>
 					<div class="cart__item-remove">
-						<button class="cart__item-remove-button" type="button"></button>
+						<svg>
+							<use xlink:href="#icon-cross">
+						</svg>
 					</div>
-
+				</div>
+				<div class="cart__item">
+					<figure class="cart__item-img">
+						<img src="img/img-cart2.png" alt="">
+					</figure>
+					<div class="cart__item-content">
+						<h3 class="cart__item-title">Gluten Free Crust Mix Pie  200 gr.</h3>
+						<div class="cart__item-flex">
+							<div class="cart__item-vendorcode">Арт. 54545-45</div>
+							<div class="cart__item-sort">Шоколадный вкус 300 гр.</div>
+						</div>
+					</div>
+					<div class="cart__item-quantity">
+						<div class="quantity">
+							<button type="button" class="quantity__button minus">
+								<svg>
+									<use xlink:href="#icon-minus">
+								</svg>
+							</button>
+							<input type="text" class="quantity__input" value="1">
+							<button type="button" class="quantity__button plus">
+								<svg>
+									<use xlink:href="#icon-plus">
+								</svg>
+							</button>
+						</div>
+					</div>
+					<div class="cart__item-price"><b>1988</b> KZT</div>
+					<div class="cart__item-remove">
+						<svg>
+							<use xlink:href="#icon-cross">
+						</svg>
+					</div>
+				</div>
+				<div class="cart__item">
+					<figure class="cart__item-img">
+						<img src="img/img-cart3.png" alt="">
+					</figure>
+					<div class="cart__item-content">
+						<h3 class="cart__item-title">Gluten Free Crust Mix Pie  200 gr.</h3>
+						<div class="cart__item-flex">
+							<div class="cart__item-vendorcode">Арт. 54545-45</div>
+							<div class="cart__item-sort">Шоколадный вкус 300 гр.</div>
+						</div>
+					</div>
+					<div class="cart__item-quantity">
+						<div class="quantity">
+							<button type="button" class="quantity__button minus">
+								<svg>
+									<use xlink:href="#icon-minus">
+								</svg>
+							</button>
+							<input type="text" class="quantity__input" value="1">
+							<button type="button" class="quantity__button plus">
+								<svg>
+									<use xlink:href="#icon-plus">
+								</svg>
+							</button>
+						</div>
+					</div>
+					<div class="cart__item-price"><b>1988</b> KZT</div>
+					<div class="cart__item-remove">
+						<svg>
+							<use xlink:href="#icon-cross">
+						</svg>
+					</div>
 				</div>
 			</div>
-		</form>
+			<div class="cart__footer">
+				<div class="cart__coupon">
+					<input type="text" class="cart__coupon-input input" placeholder="Номер купона">
+					<button type="button" class="cart__coupon-button button button_background_transparent">Подтвердить</button>
+				</div>
+				<div class="cart__submit">
+					<div class="cart__submit-sum">
+						<div class="cart__submit-sum-title">Итого:</div>
+						<div class="cart__submit-sum-text"><b>1988</b> KZT</div>
+					</div>
+					<button type="submit" class="cart__submit-button button button_background_red">Оформить заказ</button>
+				</div>
+			</div>
+		</div>
 	</section>
 
 	<footer class="footer">
@@ -206,11 +286,16 @@
 				    stroke-linejoin="round" />
 			</symbol>
 			<symbol id="icon-minus" viewBox="0 0 16 2" fill="none">
-				<path d="M1 1H15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M1 1H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 			</symbol>
 			<symbol id="icon-plus" viewBox="0 0 16 16" fill="none">
-				<path d="M8 1V15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-				<path d="M1 8H15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M8 1V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M1 8H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</symbol>
+			<symbol id="icon-cross" viewBox="0 0 22 22" fill="none">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M14 8L8 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M8 8L14 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 			</symbol>
 		</svg>
 	</div>

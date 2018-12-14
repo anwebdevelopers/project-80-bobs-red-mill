@@ -185,4 +185,64 @@ $(function() {
         }
     });
 
+
+    /*******************************************************/
+    //YANDEX MAP
+    /*******************************************************/
+    $('#map').length && ymaps.ready(function() {
+
+        const myMap = new ymaps.Map('map', {
+            center: [59.521582, 34.435892],
+            zoom: 14,
+            controls: [],
+            behaviors: ['drag', 'dblClickZoom', 'rightMouseButtonMagnifier', 'multiTouch']
+        }, {
+            searchControlProvider: 'yandex#search'
+        });
+
+        //Элементы управления
+        myMap.controls.add('zoomControl', {
+            size: 'small',
+            position: {
+                top: 'auto',
+                left: 10,
+                bottom: 50
+            }
+        });
+
+        //По клику ставим метку и перемещаемся к ней
+        $('[href="#map"]').on('click', function() {
+
+            const latitude = Number($(this).attr('data-map-latitude'));
+            const longitude = Number($(this).attr('data-map-longitude'));
+            const text = $(this).attr('data-map-text');
+
+            //Отображение метки с контентом
+            myMap.geoObjects.add(new ymaps.Placemark([latitude, longitude], {
+                // iconLayout: 'default#image',
+                // iconImageHref: 'img/icon-map3.png',
+                // iconImageSize: [34, 48],
+                // iconImageOffset: [-17, -48]
+                // iconContent: text,
+                // hintContent: text,
+                balloonContent: text
+            }, {
+                preset: "islands#blueStretchyIcon"
+            }));
+
+            //перемещение по координатам
+            myMap.panTo([latitude, longitude], {
+                flying: false,
+                duration: 1300
+            });
+            // myMap.setZoom(16)
+        });
+
+        //Вкл/Выкл драг карты при адаптиве
+        $(window).on('resize load', function() {
+            $(window).width() <= 960 ? myMap.behaviors.disable('drag') : myMap.behaviors.enable('drag')
+        });
+
+    });
+
 });

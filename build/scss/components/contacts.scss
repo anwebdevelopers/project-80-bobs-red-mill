@@ -1,0 +1,49 @@
+.contacts {
+    padding: 4rem 0 8rem 0;
+}
+.contacts__box {
+    display: flex;
+}
+.contacts__form {
+    flex: 0 0 auto;
+    width: 58%;
+}
+.contacts__info {
+    flex: 0 0 auto;
+    width: 32%;
+    margin-left: 10%;
+}
+.contacts__info-item {
+    margin-top: 4rem;
+}
+.contacts__info-title {
+    margin: 0;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+.contacts__info-list {
+    padding: 0;
+    list-style: none;
+    margin: 2rem 0 0 0;
+    li {
+        margin-top: 2rem;
+        a {
+            text-decoration-color: rgba(0,0,0,0);
+            color: $color-accent;
+            transition: .3s;
+
+            &[href^="tel:"] {
+                text-decoration: none;
+                color: inherit;
+                font-size: 2.2rem;
+                font-weight: 600;
+            }
+            &:hover, &:active {
+                text-decoration-color: currentColor;
+                &[href^="tel:"] {
+                    color: $color-accent;
+                }
+            }
+        }
+    }
+}

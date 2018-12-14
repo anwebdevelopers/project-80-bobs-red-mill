@@ -169,7 +169,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 3.2rem;
-    line-height: 1.2;
     font-weight: 400;
     font-family: 'Coco Gothic';
     color: #1D1E1F;
@@ -228,8 +227,8 @@
             .page__aside-nav-title.accordion__button {
                 &:before {
                     transform: rotate(135deg);
-                    background-color: $color-accent;
-                    color: #fff;
+                    // background-color: $color-accent;
+                    // color: #fff;
                 }
             }
             .page__aside-nav-list.accordion__box {
@@ -250,13 +249,14 @@
             content: '';
             position: absolute;
             right: 1px;
-            top: 1.5rem;
-            width: 3.5rem;
-            height: 3.5rem;
+            top: 1.8rem;
+            width: 3rem;
+            height: 3rem;
             border-radius: 50%;
-            background-color: #D8D8E1;
-            background-image: linear-gradient(currentColor,currentColor),linear-gradient(currentColor,currentColor);
-            background-size: 1.1rem 2px,2px 1.1rem;
+            border: 1px solid #c7c7d0;
+            // background-color: #c7c7d0;
+            background-image: linear-gradient(#c7c7d0,#c7c7d0),linear-gradient(#c7c7d0,#c7c7d0);
+            background-size: 1.2rem 1px, 1px 1.2rem;
             background-position: 50% 50%,50% 50%;
             background-repeat: no-repeat;
             transition: .3s;
