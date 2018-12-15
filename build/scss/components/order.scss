@@ -82,7 +82,8 @@
     }
 }
 .form__submit {
-    flex: 0 1 auto;
+    flex: 0 0 auto;
+    width: 100%;
     margin-top: 3rem;
 }
 .order__payment {
@@ -117,6 +118,9 @@
     }
     .form__area-input {
         height: 8rem;
+    }
+    .form__submit {
+        text-align: center;
     }
 }
 

@@ -1,5 +1,5 @@
 .map {
-    min-height: 46rem;
+    min-height: 48rem;
     padding: 4rem 0;
 
     position: relative;
@@ -20,7 +20,130 @@
 //     display: flex;
 // }
 .map__title {
+    float: left;
     text-transform: none;
+    margin-right: 30rem;
+}
+.map__info {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    // bottom: 0;
+}
+.map__info-inner {
+
+    transform: translateY(-100%);
+    float: right;
+    max-height: 40rem;
+    max-width: 27rem;
+    margin-left: 30px;
+    background-color: #fff;
+    box-shadow: 0 1.2rem 4rem 0 rgba(0, 0, 0, 0.250453);
+    overflow-y: auto;
     position: relative;
+}
+.map__info-close {
+    position: absolute;
     z-index: 1;
+    right: 1rem;
+    top: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    transform: rotate(-45deg);
+    color: #fff;
+    background-image: linear-gradient(#D8D8E1, #D8D8E1), linear-gradient(#D8D8E1, #D8D8E1);
+    background-size: 100% 1px, 1px 100%;
+    background-position: 0 50%, 50% 0;
+    background-repeat: no-repeat;
+    transition: .3s;
+    cursor: pointer;
+    &:hover, &:active {
+        background-image: linear-gradient($color-accent, $color-accent), linear-gradient($color-accent, $color-accent);
+    }
+}
+.map__info-img {
+    margin: 0;
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        // z-index: 1;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-image: linear-gradient(1.33deg, rgba(0, 0, 0, 0.0001) 63.99%, #000000 97.68%);
+    }
+    img {
+        display: inline-block;
+        vertical-align: top;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+}
+
+.map__info-title {
+    margin: 2.5rem 0 0 0;
+    padding: 0 2.5rem;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+.map__info-address {
+    margin: 1.5rem 0 0 0;
+    padding: 0 2.5rem;
+    font-size: 1.4rem;
+    font-style: normal;
+}
+
+.map__info-tel {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    vertical-align: top;
+    margin: 1.5rem 0 0 0;
+    padding: 0 2.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    transition: .3s;
+    &:hover, &:active {
+        color: $color-accent;
+    }
+}
+.map__info-mode {
+    margin-top: 2.5rem;
+    padding: 2.5rem;
+    border-top: 1px solid #D8D8E1;
+}
+@media only screen and (max-width : 1280px) {
+
+}
+
+@media only screen and (max-width : 992px) {
+
+}
+
+@media only screen and (max-width : 768px) {
+
+}
+
+@media only screen and (max-width : 640px) {
+    .map {
+        min-height: 100rem;
+
+    }
+    .map__title {
+        margin-right: 0;
+    }
+    
+}
+
+@media only screen and (max-width : 480px) {
+
+}
+
+@media only screen and (max-width : 360px) {
+
 }
