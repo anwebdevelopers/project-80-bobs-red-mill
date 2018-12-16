@@ -190,67 +190,10 @@ $(function() {
     /*******************************************************/
 
     if ((typeof ymaps === 'object') && $('#map').length) {
-        // Пример реализации боковой панели на основе наследования от collection.Item.
-        // Боковая панель отображает информацию, которую мы ей передали.
-        ymaps.modules.define('Panel', [
-            'util.augment',
-            'collection.Item'
-        ], function(provide, augment, item) {
-            // Создаем собственный класс.
-            var Panel = function(options) {
-                Panel.superclass.constructor.call(this, options);
-            };
 
-            // И наследуем его от collection.Item.
-            augment(Panel, item, {
-                onAddToMap: function(map) {
-                    Panel.superclass.onAddToMap.call(this, map);
-                    this.getParent().getChildElement(this).then(this._onGetChildElement, this);
-                    // Добавим отступы на карту.
-                    // Отступы могут учитываться при установке текущей видимой области карты,
-                    // чтобы добиться наилучшего отображения данных на карте.
-                    map.margin.addArea({
-                        // top: 'auto',
-                        right: 30,
-                        bottom: 40,
-                        width: '270px',
-                        height: '400px'
-                    })
-                },
+        ymaps.ready(function() {
 
-                onRemoveFromMap: function(oldMap) {
-                    if (this._$control) {
-                        this._$control.remove();
-                    }
-                    Panel.superclass.onRemoveFromMap.call(this, oldMap);
-                },
-
-                _onGetChildElement: function(parentDomContainer) {
-                    // Создаем HTML-элемент с текстом.
-                    // По-умолчанию HTML-элемент скрыт.
-                    this._$control = $('<div class="map__info"><div class="container"><div class="map__info-inner"><div class="map__info-close"></div><div class="map__info-content"></div></div></div></div>').appendTo(parentDomContainer);
-                    this._$content = $('.map__info-content');
-                    // При клике по крестику будем скрывать панель.
-                    $('.map__info-close').on('click', this._onClose);
-                },
-                _onClose: function() {
-                    $('.map__info').css('display', 'none');
-                    $('.map__info-content').html('');
-                },
-                // Метод задания контента панели.
-                setContent: function(text) {
-                    // При задании контента будем показывать панель.
-                    this._$control.css('display', 'block');
-                    this._$content.html(text);
-                }
-            });
-
-            provide(Panel);
-        });
-
-        ymaps.ready(['Panel']).then(function() {
-
-            const map = new ymaps.Map("map", {
+            const myMap = new ymaps.Map('map', {
                 center: [43.251258, 76.931046],
                 zoom: 13,
                 controls: [],
@@ -260,115 +203,75 @@ $(function() {
             });
 
             //Элементы управления
-            map.controls.add('zoomControl', {
+            myMap.controls.add('zoomControl', {
                 size: 'small',
                 position: {
                     top: 'auto',
                     left: 10,
-                    bottom: 40
+                    bottom: 50
                 }
             });
 
-            // Создадим контент для меток.
-            const panelContentArr = [
-                {
-                    сoordinates: [43.251258, 76.931046],
-                    image: 'img/img-map-info1.png',
-                    title: 'ТЦ “Алтын Тулпар”',
-                    address: 'ул. Лейтенанта Федотова д.32 оф. 300, третий этаж',
-                    tel: '+7 777 454 55 44',
-                    mode: ['<b>Пн-Пт</b> 10:00 – 19:00', '<b>Сб-Вс</b> 12:00 – 22:00'],
-                },
-                {
-                    сoordinates: [43.261258, 76.941046],
-                    image: 'img/img-map-info2.png',
-                    title: 'ТЦ “Алтын Тулпар”',
-                    address: 'Улица Муканова д.32 оф. 300, третий этаж',
-                    tel: '+7 777 454 55 44',
-                    mode: ['<b>Пн-Пт</b> 10:00 – 19:00', '<b>Сб-Вс</b> 12:00 – 22:00'],
-                },
-            ];
-            let startPanelContent;
+            //Генерируем выпадающий список адресов
+            $( '.map__info' ).addClass('active').each( function() {
 
-            const panel = new ymaps.Panel();
+                const $this = $( this );
 
-            map.controls.add(panel, {
-                float: 'none',
-                position: {
-                    left: 0,
-                    right: 0,
-                    bottom: 40,
-                }
-            });
+                $this.find('.map__info-item').not(':first').hide();
 
-            // Создадим коллекцию геообъектов.
-            const collection = new ymaps.GeoObjectCollection(null, {
-                // Запретим появление балуна.
-                hasBalloon: false,
-                iconColor: '#3b5998'
-            });
+                //По клику ставим метку и перемещаемся к ней
+                $this.find( '.map__info-address' ).each( function() {
 
-            for (let i = 0; i < panelContentArr.length; i++) {
-                let panelHTML = '';
+                    //Отображение метки с контентом
+                    myMap.geoObjects.add(new ymaps.Placemark(JSON.parse($(this).attr('data-coordinates')), {
+                        hintContent: $(this).text(),
+                        balloonContent: $(this).text(),
+                    }, {
+                        iconLayout: 'default#image',
+                        iconImageHref: 'img/icon-mark.svg',
+                        iconImageSize: [37, 56],
+                        iconImageOffset: [-18, -56],
+                    }));
 
-                panelHTML += panelContentArr[i].image ? '<figure class="map__info-img"><img src="' + panelContentArr[i].image + '" alt="' + (panelContentArr[i].title ? panelContentArr[i].title : '') + '"></figure>' : '';
+                });
 
-                panelHTML += panelContentArr[i].title ? '<h3 class="map__info-title">' + panelContentArr[i].title + '</h3>' : '';
+                $( '<div class="map__info-select"></div>' ).prependTo($this).append($this.find( '.map__info-address' ).first().addClass('active').end().clone()).on('click', '.map__info-address:not(.active)', function() {
 
-                panelHTML += panelContentArr[i].address ? '<address class="map__info-address">' + panelContentArr[i].address + '</address>' : '';
 
-                panelHTML += panelContentArr[i].tel ? '<a href="tel:' + panelContentArr[i].tel.replace(/\s+/g, '') + '" class="map__info-tel">' + panelContentArr[i].tel + '</a>' : '';
+                    $(this).addClass('active').siblings().removeClass('active')
+                    .closest('.map__info').find('.map__info-item').slideUp(400).eq($(this).index()).slideDown(400)
+                    .end().end().find( '.map__info-button').removeClass('active')
+                    .end().find( '.map__info-select').removeClass('active');
 
-                if (panelContentArr[i].mode) {
-                    panelHTML += '<div class="map__info-mode">';
+                    //перемещение по координатам
+                    myMap.panTo(JSON.parse($(this).attr('data-coordinates')), {
+                        flying: false,
+                        duration: 600
+                    });
+                });
 
-                    for (let y = 0; y < panelContentArr[i].mode.length; y++) {
-                        panelHTML += panelContentArr[i].mode[y] ?  panelContentArr[i].mode[y] + '<br>' : '';
+
+                $( '<div class="map__info-button"></div>' ).prependTo($this).on('click', function(e) {
+                    e.stopPropagation();
+                    $(this).toggleClass('active').closest('.map__info').find( '.map__info-select').toggleClass('active');
+                });
+
+                $(document).on('click', function(e) {
+                    e.stopPropagation();
+                    if (!$(e.target).closest('.map__info-select').length) {
+                        $this.find( '.map__info-button').removeClass('active');
+                        $this.find( '.map__info-select').removeClass('active');
                     }
-
-                    panelHTML += '</div>';
-                }
-
-                if (i === 0) {
-                    startPanelContent = panelHTML;
-                }
-
-                // Добавим геообъекты в коллекцию.
-                collection.add(new ymaps.Placemark(panelContentArr[i].сoordinates, {
-                    balloonContent: panelHTML,
-                    hintContent: panelContentArr[i].title,
-                }, {
-                    iconLayout: 'default#image',
-                    iconImageHref: 'img/icon-mark.svg',
-                    iconImageSize: [37, 56],
-                    iconImageOffset: [-18, -56],
-                }));
-
-            }
-
-            // Добавим коллекцию на карту.
-            map.geoObjects.add(collection);
-            // Подпишемся на событие клика по коллекции.
-            collection.events.add('click', function(e) {
-                // Получим ссылку на геообъект, по которому кликнул пользователь.
-                const target = e.get('target');
-                // Зададим контент боковой панели.
-                panel.setContent(target.properties.get('balloonContent'));
-                // Переместим центр карты по координатам метки с учётом заданных отступов.
-                map.panTo(target.geometry.getCoordinates(), {
-                    useMapMargin: true
                 });
             });
 
             //Вкл/Выкл драг карты при адаптиве
             $window.on('resize load', function() {
-                $window.width() <= 992 ? map.behaviors.disable('drag') : map.behaviors.enable('drag')
+                $window.width() <= 992 ? myMap.behaviors.disable('drag') : myMap.behaviors.enable('drag')
             });
 
-            //Установим стартовый контент в панель
-            setTimeout(function() {
-                panel.setContent(startPanelContent);
-            }, 1000);
+            //перерисуем карту после инициализации
+            myMap.container.fitToViewport();
 
         });
     }
